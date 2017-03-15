@@ -1,7 +1,8 @@
 module.exports = (wallaby) => {
   return {
     files: [
-      'src/**/*.js'
+      'src/**/*.js',
+      'test/**/*-helper.js'
     ],
 
     tests: [
