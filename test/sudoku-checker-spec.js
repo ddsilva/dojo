@@ -1,4 +1,4 @@
-describe('Check invalid lists', function () {
+describe('Check invalid lists', () => {
   it('should return false for an list with duplicate values', () => {
     expect(isInvalidList([1,2,3,4,5,6,6,8,9])).toBe(true);
     expect(isInvalidList([1,2,3,4,5,6,7,3,9])).toBe(true);
@@ -17,23 +17,37 @@ describe('Check invalid lists', function () {
 });
 
 describe('Invert board', () => {
-  it('should invert a board', () => {
+  it('should return an inverted board', () => {
     expect(invertBoard(sudokuHelper.littleBoard))
       .toEqual(sudokuHelper.littleInvertedBoard);
   });
 });
 
-describe('Sudoku checker', function() {
+describe('Get region lists', () => {
+  it('should return a list of regions lists', () => {
+    expect(boardRegions(sudokuHelper.valid))
+      .toEqual(sudokuHelper.validRegions);
+  });
+});
+
+describe('Sudoku checker', () => {
   it('should be valid', () => {
     expect(doneOrNot(sudokuHelper.valid))
       .toBe(sudokuHelper.doneReturn);
   });
 
-  it('should be invalid', () => {
+  it('should be invalid when there are zeros', () => {
     expect(doneOrNot(sudokuHelper.withZero))
       .toBe(sudokuHelper.notDoneReturn);
+  });
 
+  it('should be invalid when there are invalid columns', () => {
     expect(doneOrNot(sudokuHelper.withInvalidColumns))
       .toBe(sudokuHelper.notDoneReturn);
+  });
+
+  it('should be invalid when there are invalid regions', () => {
+    // expect(doneOrNot(sudokuHelper.withInvalidRegions))
+      // .toBe(sudokuHelper.notDoneReturn);
   });
 });
