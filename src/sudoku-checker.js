@@ -1,7 +1,7 @@
 const isInvalidList = (list) => {
   return list.some((item) => !item ) ||
          list.slice().sort()
-          .some((item, i, cList) => item === cList[i + 1]);
+             .some((item, i, list) => item === list[i + 1]);
 };
 
 const invertBoard = (board) => {
@@ -16,41 +16,23 @@ const invertBoard = (board) => {
 };
 
 const boardRegions = (board) => {
-  let regions = board.reduce((prev, curr, index) => {
-    let lastItem = prev.slice(-1);
-    +start
+  return board.reduce((prev, curr, index) => {
+    let lastItem = prev.slice(-1)[0],
+        regionsSlice = (lastItem && lastItem.length !== 9) ?
+                        prev.splice(-3) :
+                        [[],[],[]];
 
-    if (!lastItem.length || lastItem.length === 9) {
-      prev = prev.concat( [ [], [], [] ] );
-    }
-
-    let regionsSlice = prev.splice(-3);
-
-    console.log(prev);
-    let newPrev = prev.map((item, i) => {
+    return prev.concat(regionsSlice.map((item, i) => {
       let start = i*3;
-      console.log(item.concat(curr.slice(start, start + 3)));
       return item.concat(curr.slice(start, start + 3))
-    });
-
-    if (index == 0) {
-      console.log(newPrev);
-      console.log(prev);
-      console.log(regionsSlice);
-      console.log(prev.concat(regionsSlice));
-      console.log(curr);
-    }
-
-    // prev = prev.concat(regionsSlice);
-
-    return prev.concat(regionsSlice)
+    }))
   }, []);
-
-  console.log(regions);
-  return regions
-}
+};
 
 const doneOrNot = (board) => {
-  let done = !(board.some(isInvalidList) || invertBoard(board).some(isInvalidList));
-  return done ? 'Finished!' : 'Try again!';
+  return !(
+    board.some(isInvalidList) ||
+    invertBoard(board).some(isInvalidList) ||
+    boardRegions(board).some(isInvalidList)
+  ) ? 'Finished!' : 'Try again!';
 };

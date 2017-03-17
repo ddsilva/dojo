@@ -47,7 +47,7 @@ describe('Sudoku checker', () => {
   });
 
   it('should be invalid when there are invalid regions', () => {
-    // expect(doneOrNot(sudokuHelper.withInvalidRegions))
-      // .toBe(sudokuHelper.notDoneReturn);
+    expect(doneOrNot(sudokuHelper.withInvalidRegions))
+      .toBe(sudokuHelper.notDoneReturn);
   });
 });
