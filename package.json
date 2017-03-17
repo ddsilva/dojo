@@ -2,7 +2,6 @@
   "name": "dojo",
   "version": "1.0.0",
   "description": "My code challenge solutions",
-  "main": "index.js",
   "directories": {
     "test": "tests"
   },
