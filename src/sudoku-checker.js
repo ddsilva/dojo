@@ -17,22 +17,22 @@ const invertBoard = (board) => {
 
 const boardRegions = (board) => {
   return board.reduce((prev, curr, index) => {
-    let lastItem = prev.slice(-1)[0],
-        regionsSlice = (lastItem && lastItem.length !== 9) ?
-                        prev.splice(-3) :
-                        [[],[],[]];
+    const lastItem = prev.slice(-1)[0],
+          regionsSlice = (lastItem && lastItem.length !== 9) ?
+                          prev.splice(-3) :
+                          [[],[],[]];
 
     return prev.concat(regionsSlice.map((item, i) => {
-      let start = i*3;
+      const start = i*3;
       return item.concat(curr.slice(start, start + 3))
     }))
   }, []);
 };
 
 const doneOrNot = (board) => {
-  return !(
+  return (
     board.some(isInvalidList) ||
     invertBoard(board).some(isInvalidList) ||
     boardRegions(board).some(isInvalidList)
-  ) ? 'Finished!' : 'Try again!';
+  ) ? 'Try again!' : 'Finished!';
 };
