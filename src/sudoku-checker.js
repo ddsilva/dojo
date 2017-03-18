@@ -1,6 +1,5 @@
 const isValidList = (list) => {
   const add = (a, b) => a + b;
-
   return list.every(Boolean) && list.reduce(add) === 45
 }
 
