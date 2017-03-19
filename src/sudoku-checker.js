@@ -3,7 +3,7 @@ const isValidList = (list) => {
          list
           .slice()
           .sort((a, b) => a-b)
-          .every((item, index, list) => item !== list[ index + 1])
+          .every((item, index, list) => item !== list[index + 1])
 }
 
 const invertBoard = (board) => {
