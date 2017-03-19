@@ -2,6 +2,7 @@ describe('Check invalid lists', () => {
   it('should return false for a list with duplicate values', () => {
     expect(isValidList([1,2,3,4,5,6,6,8,9])).toBeFalsy();
     expect(isValidList([1,2,3,4,5,6,7,3,9])).toBeFalsy();
+    expect(isValidList([9,9,9,9,5,1,1,1,1])).toBeFalsy();
   });
 
   it('should return false for a list with an zero item', () => {

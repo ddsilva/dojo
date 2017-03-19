@@ -1,6 +1,9 @@
 const isValidList = (list) => {
-  const add = (a, b) => a + b;
-  return list.every(Boolean) && list.reduce(add) === 45
+  return list.every(Boolean) &&
+         list
+          .slice()
+          .sort((a, b) => a-b)
+          .every((item, index, list) => item !== list[ index + 1])
 }
 
 const invertBoard = (board) => {
