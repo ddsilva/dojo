@@ -21,3 +21,5 @@ const validBraces = braces => {
 
   return valid && !stack.length;
 }
+
+module.exports = validBraces;
