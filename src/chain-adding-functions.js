@@ -3,3 +3,5 @@ const add = (a) => {
   fn.valueOf = () => a;
   return fn;
 }
+
+module.exports = add;
