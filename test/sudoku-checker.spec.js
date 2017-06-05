@@ -1,17 +1,25 @@
+import {
+  isValidList,
+  invertBoard,
+  boardRegions,
+  doneOrNot
+} from '../src/sudoku-checker';
+import { sudokuHelper } from './helpers/sudoku-checker';
+
 describe('Check invalid lists', () => {
-  it('should return false for a list with duplicate values', () => {
+  test('should return false for a list with duplicate values', () => {
     expect(isValidList([1,2,3,4,5,6,6,8,9])).toBeFalsy();
     expect(isValidList([1,2,3,4,5,6,7,3,9])).toBeFalsy();
     expect(isValidList([9,9,9,9,5,1,1,1,1])).toBeFalsy();
   });
 
-  it('should return false for a list with an zero item', () => {
+  test('should return false for a list with an zero item', () => {
     expect(isValidList([1,2,3,4,0,6,7,8,9])).toBeFalsy();
     expect(isValidList([1,2,0,4,5,6,7,8,9])).toBeFalsy();
     expect(isValidList([5,3,4,6,7,8,9,0,2])).toBeFalsy();
   });
 
-  it('should return true for a valid list', () => {
+  test('should return true for a valid list', () => {
     expect(isValidList([1,2,3,4,5,6,7,8,9])).toBeTruthy();
     expect(isValidList([2,1,3,5,4,7,6,9,8])).toBeTruthy();
   });

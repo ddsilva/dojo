@@ -74,3 +74,5 @@ const sudokuHelper = {
   doneReturn: 'Finished!',
   notDoneReturn: 'Try again!'
 };
+
+export { sudokuHelper };

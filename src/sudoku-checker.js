@@ -38,3 +38,10 @@ const doneOrNot = (board) => {
     boardRegions(board).every(isValidList)
   ) ? 'Finished!' : 'Try again!';
 };
+
+export {
+  isValidList,
+  invertBoard,
+  boardRegions,
+  doneOrNot
+};
