@@ -1,4 +1,4 @@
-const iqTest = require('../src/iq-test');
+import iqTest from '../src/iq-test';
 
 describe('IQ Test', () => {
   test('should find the odd one position', () => {

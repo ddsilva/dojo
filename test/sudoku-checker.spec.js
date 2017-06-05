@@ -1,10 +1,10 @@
+import sudokuHelper from './helpers/sudoku-checker';
 import {
   isValidList,
   invertBoard,
   boardRegions,
   doneOrNot
 } from '../src/sudoku-checker';
-import { sudokuHelper } from './helpers/sudoku-checker';
 
 describe('Check invalid lists', () => {
   test('should return false for a list with duplicate values', () => {

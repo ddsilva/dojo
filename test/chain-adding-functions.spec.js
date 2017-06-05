@@ -1,4 +1,4 @@
-const add = require('../src/chain-adding-functions');
+import add from '../src/chain-adding-functions';
 
 describe('Chain adding function', () => {
   describe('When called alone', () => {

@@ -1,4 +1,4 @@
-const compose = require('../src/function-composition');
+import compose from '../src/function-composition';
 
 describe('Function composition', () => {
   const add1    = ((a) => a + 1),

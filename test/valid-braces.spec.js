@@ -1,4 +1,4 @@
-const validBraces = require('../src/valid-braces');
+import validBraces from '../src/valid-braces';
 
 describe('Valid braces function', () => {
   test('should return true for valid vraces', () => {

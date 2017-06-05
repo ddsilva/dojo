@@ -8,4 +8,4 @@ const iqTest = (numbers) => {
   return list.indexOf(value) + 1;
 }
 
-module.exports = iqTest;
+export default iqTest;

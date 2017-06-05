@@ -4,4 +4,4 @@ const add = (a) => {
   return fn;
 }
 
-module.exports = add;
+export default add;
