@@ -6,3 +6,5 @@ const cache = (fn) => {
     return results[key] = key in results ? results[key] : fn(...args);
   }
 }
+
+export default cache;
