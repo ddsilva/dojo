@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "My code challenge solutions",
   "directories": {
-    "test": "tests"
+    "test": "test"
   },
   "scripts": {
     "test": "jest"
