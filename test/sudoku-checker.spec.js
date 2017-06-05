@@ -26,36 +26,36 @@ describe('Check invalid lists', () => {
 });
 
 describe('Invert board', () => {
-  it('should return an inverted board', () => {
+  test('should return an inverted board', () => {
     expect(invertBoard(sudokuHelper.littleBoard))
       .toEqual(sudokuHelper.littleInvertedBoard);
   });
 });
 
 describe('Get region lists', () => {
-  it('should return a list of regions lists', () => {
+  test('should return a list of regions lists', () => {
     expect(boardRegions(sudokuHelper.valid))
       .toEqual(sudokuHelper.validRegions);
   });
 });
 
 describe('Sudoku checker', () => {
-  it('should be valid', () => {
+  test('should be valid', () => {
     expect(doneOrNot(sudokuHelper.valid))
       .toBe(sudokuHelper.doneReturn);
   });
 
-  it('should be invalid when there are zeros', () => {
+  test('should be invalid when there are zeros', () => {
     expect(doneOrNot(sudokuHelper.withZero))
       .toBe(sudokuHelper.notDoneReturn);
   });
 
-  it('should be invalid when there are invalid columns', () => {
+  test('should be invalid when there are invalid columns', () => {
     expect(doneOrNot(sudokuHelper.withInvalidColumns))
       .toBe(sudokuHelper.notDoneReturn);
   });
 
-  it('should be invalid when there are invalid regions', () => {
+  test('should be invalid when there are invalid regions', () => {
     expect(doneOrNot(sudokuHelper.withInvalidRegions))
       .toBe(sudokuHelper.notDoneReturn);
   });
