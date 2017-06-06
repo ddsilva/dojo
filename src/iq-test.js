@@ -1,3 +1,4 @@
+// https://www.codewars.com/kata/552c028c030765286c00007d
 const iqTest = (numbers) => {
   const list = numbers.split(' ').map(Number),
         isOdd = ((n) => n % 2),
