@@ -17,12 +17,12 @@ describe('Cached function', () => {
     voidCached = cache(voidMockedFn);
   });
 
-  test('should return correct results', () => {
+  it('should return correct results', () => {
     expect(cached(1)).toEqual([1]);
     expect(cached(1, 2)).toEqual([1, 2]);
   });
 
-  test('should not call inner function again for known arguments', () => {
+  it('should not call inner function again for known arguments', () => {
     expect(mockedFn).not.toHaveBeenCalled();
 
     cached(1,2,3);
@@ -31,7 +31,7 @@ describe('Cached function', () => {
     expect(mockedFn).toHaveBeenCalledTimes(1);
   });
 
-  test('should return correct result for void function call', () => {
+  it('should return correct result for void function call', () => {
     let r1 = voidCached(),
         r2 = voidCached();
 
@@ -39,12 +39,12 @@ describe('Cached function', () => {
     expect(r1).toEqual(r2);
   });
 
-  test('should return different results for different inner functions', () => {
+  it('should return different results for different inner functions', () => {
     expect(cached(3, 2, 1)).toEqual([3, 2, 1]);
     expect(sortCached(3, 2, 1)).toEqual([1, 2, 3]);
   });
 
-  test('should return correct result even for objects as arguments', () => {
+  it('should return correct result even for objects as arguments', () => {
     let ob1 = { foo: 1, bar: 2 },
         ob2 = { foo: 2, bar: 3 },
         r1 = cached(ob1),
