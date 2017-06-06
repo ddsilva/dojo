@@ -2,15 +2,16 @@ import cache from '../src/cached-function'
 
 describe('Cached function', () => {
   let mockedFn, sortMockedFn, voidMockedFn, cached, sortCached, voidCached;
+  const createMockFn = (fn) => jest.fn(fn);
 
   beforeEach(() => {
-    mockedFn = jest.fn((...args) => args);
+    mockedFn = createMockFn((...args) => args);
 
-    sortMockedFn = jest.fn((...args) => {
+    sortMockedFn = createMockFn((...args) => {
       return args.sort((a,b) => a - b)
     });
 
-    voidMockedFn = jest.fn();
+    voidMockedFn = createMockFn();
 
     cached = cache(mockedFn);
     sortCached = cache(sortMockedFn);
