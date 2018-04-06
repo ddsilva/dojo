@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/ddsilva/dojo/issues"
   },
-  "homepage": "https://github.com/ddsilva/dojo#readme",
+  "homepage": "https://github.com/ddsilva/dojo",
   "devDependencies": {
     "babel-core": "^6.24.0",
     "babel-jest": "^20.0.3",
